@@ -274,9 +274,43 @@ class: text-left
 transition: slide-left
 ---
 
-# Show 
+# Unit Testing Async Functions (pg.1)
 
-- asdf
+- try the following, does this pass?:
+  ```js
+  it('should this async code pass?', () => {
+    setTimeout(() => {
+      expect(false).toBe(true);
+    }, 1000)
+  })
+  ```
+  - let's put this timeout in an async function, then write a unit test
+
+  ---
+transition: slide-left
+---
+
+# Unit Testing Async Functions (pg.2)
+
+  ```js
+  // in math.js
+  export const delayedAnswer = () => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(2);
+      }, 1000)
+    })
+  }
+
+  // in /tests/math.test.js
+  import { delayedAnswer } from '../math.js';
+
+  it('should pass even tho async', async () => {
+    const answer = await delayedAnswer(2);
+    expect(answer).toBe(2)
+  })
+  ```
+
 
 ---
 transition: slide-left
