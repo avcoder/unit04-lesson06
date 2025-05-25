@@ -165,6 +165,7 @@ transition: slide-left
     ```
 - Tip: _Your tests pass because they didn't fail. Not because your code works_ (ex: `return 4`)
 1. Refactor function if needed so it's cleaner yet stays `GREEN` 
+- Q: When should you write unit tests?
 
 ---
 transition: slide-left
