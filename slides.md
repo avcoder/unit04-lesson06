@@ -108,6 +108,8 @@ describe('first test', () => {
 - `npm run test` or `npm run test:watch`
 - try breaking a test to see what happens (ex: `expect(2 + 2).toBe(5)`)
 - https://jestjs.io/docs/expect
+- What do you think `describe()` does?
+- What does `it()` do?
 
 ---
 transition: slide-left
@@ -125,12 +127,15 @@ export function add(a, b) {
 // math.test.js
 import { add } from '../math.js';
 
-describe('add()', () => {
+describe('add', () => {
   it('should add two numbers', () => {
     expect(________).toBe(5);
   });
 });
 ```
+- Try commenting out the entire `expect().toBe()` line -- does the test still pass?
+- Install VS Code extension "Jest"
+- Make functions and unit tests for subtract, multiple, divide
 
 ---
 layout: image-right
