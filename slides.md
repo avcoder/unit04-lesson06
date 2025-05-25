@@ -70,11 +70,11 @@ transition: slide-left
 # Debugging and Testing Routes
 
 - Identify tools you might use to normally test a route like this:
-```js
-app.get('/api/trucks', (req, res) => {
-  res.json({ message: 'List of food trucks' });
-});
-```
+  ```js
+  app.get('/api/trucks', (req, res) => {
+    res.json({ message: 'List of food trucks' });
+  });
+  ```
 - What do you think would change if you had a way to automatically test parts of your app every time you updated it?
 - `npm init -y`
 - `npm i -D jest @babel/core @babel/preset-env babel-jest`
@@ -93,18 +93,18 @@ transition: slide-left
 
 # Exercise: Writing Unit Tests (pg.1)
 
-```js
-// first.test.js
-describe('first test', () => {
-    it('should work', () => {
-        expect(true).toBe(true)
-    });
+  ```js
+  // first.test.js
+  describe('first test', () => {
+      it('should work', () => {
+          expect(true).toBe(true)
+      });
 
-    it('should be 4', () => {
-        expect(1 + 1).toBe(2)
-    })
-})
-```
+      it('should be 4', () => {
+          expect(1 + 1).toBe(2)
+      })
+  })
+  ```
 - `npm run test` or `npm run test:watch`
 - try breaking a test to see what happens (ex: `expect(2 + 2).toBe(5)`)
 - https://jestjs.io/docs/expect
@@ -116,26 +116,54 @@ transition: slide-left
 ---
 
 # Exercise: Writing Unit Tests (pg.2)
+Test Driven Development (i.e. red, green, refactor) is one style of writing unit tests. 
 
-- FILL IN THE BLANK
-```js
-// math.js
-export function add(a, b) {
-  return a + b;
-}
+1. Write the unit test first = `red`
+  ```js
+  // math.js
+  export const add = () => {}
+  ```s
+  ```js
+  // /tests/math.test.js
+  import { add } from '../math.js';
 
-// math.test.js
-import { add } from '../math.js';
-
-describe('add', () => {
-  it('should add two numbers', () => {
-    expect(________).toBe(5);
+  describe('add', () => {
+    it('should add two numbers', () => {
+      expect(add(2, 3)).toBe(5);
+    });
   });
-});
-```
+  ```
+- Step 1) `RED`
+- Step 2) `GREEN` - implement function now to make it pass
+- Step 3) `REFACTOR` function (if needed) yet still pass
+
+---
+transition: slide-left
+---
+
+# Exercise: Writing Unit Tests (pg.3)
+
+1. Write the function then incorporate it into test so it passes = `green`
+  ```js
+  // math.js
+  export function add(a, b) {
+    return a + b;
+  }
+  ```
+  ```js
+  // tests/math.test.js
+  import { add } from '../math.js';
+
+  describe('add', () => {
+    it('should add two numbers', () => {
+      expect(add(2, 3)).toBe(5);
+    });
+  });
+  ```
+1. Refactor function if needed so it's cleaner yet stays `green` 
 - Try commenting out the entire `expect().toBe()` line -- does the test still pass?
 - Install VS Code extension "Jest"
-- Make functions and unit tests for subtract, multiple, divide
+- Exercise: Make functions and unit tests for subtract, multiple, divide
 
 ---
 layout: image-right
