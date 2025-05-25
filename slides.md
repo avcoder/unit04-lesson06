@@ -110,20 +110,20 @@ transition: slide-left
 - https://jestjs.io/docs/expect
 - What do you think `describe()` does?
 - What does `it()` do?
+- What does `expect()` do?
 
 ---
 transition: slide-left
 ---
 
 # Writing Unit Tests (pg.2)
-Test Driven Development (i.e. red, green, refactor) is one style of writing unit tests. 
+Test Driven Development (i.e. red 🔴, green 🟢, refactor 🟢) is one style of writing unit tests. 
 
-1. Write the unit test first = `red`
+1. Write the unit test first = `RED`
   ```js
   // math.js
   export const add = () => {}
-  ```s
-  ```js
+
   // /tests/math.test.js
   import { add } from '../math.js';
 
@@ -133,9 +133,9 @@ Test Driven Development (i.e. red, green, refactor) is one style of writing unit
     });
   });
   ```
-- Step 1) `RED`
-- Step 2) `GREEN` - implement function now to make it pass
-- Step 3) `REFACTOR` function (if needed) yet still pass
+- Step 1) 🔴 `RED`
+- Step 2) 🟢 `GREEN` - implement function now to make it pass
+- Step 3) 🟢 `REFACTOR` function (if needed) yet still pass
 - Now you have a way to add/change features in your codebase and getting instant feedback
 
 ---
@@ -144,25 +144,24 @@ transition: slide-left
 
 # Writing Unit Tests (pg.3)
 
-1. Write the function then incorporate it into test so it passes = `green`
-  ```js
-  // math.js
-  export function add(a, b) {
-    return a + b;
-  }
-  ```
-  ```js
-  // tests/math.test.js
-  import { add } from '../math.js';
+2. Write the function then incorporate it into test so it passes = `GREEN`
+    ```js
+    // math.js
+    export function add(a, b) {
+      return a + b;
+    }
+    ```
+    ```js
+    // tests/math.test.js
+    import { add } from '../math.js';
 
-  describe('add', () => {
-    it('should add two numbers', () => {
-      expect(add(2, 3)).toBe(5);
+    describe('add', () => {
+      it('should add two numbers', () => {
+        expect(add(2, 3)).toBe(5);
+      });
     });
-  });
-  ```
-1. Refactor function if needed so it's cleaner yet stays `green` 
-- Try commenting out the entire `expect().toBe()` line -- does the test still pass?
+    ```
+1. Refactor function if needed so it's cleaner yet stays `GREEN` 
 - Install VS Code extension "Jest"
 
 ---
@@ -172,10 +171,11 @@ transition: slide-left
 # Exercise: Writing Unit Tests
 Practice Test Driven Development
 
-- Make functions and unit tests for:
+1. Make functions and unit tests for:
    - `subtract()`
    - `multiple()`
    - `divide()`
+1. What happens if your functions are called with arguments that aren't numbers?
 
 ---
 layout: image-right
