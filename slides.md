@@ -181,7 +181,7 @@ Practice Test Driven Development
 transition: slide-left
 ---
 
-# Testing for Invalid Input
+# Testing for Invalid Input (pg.1)
 
 - What happens if your functions are called with arguments that invalid? ex: add('1', '2')
 
@@ -198,15 +198,33 @@ transition: slide-left
     expect(add('1', '2')).toBe(3)
   })
   ```
-  - What happens if you call it with `(add(2, 'potato')`? 
-  - How would you write the test? Would you expect it to throw an error or not? (up to you) How would you write the function if it threw an error?
+  - But what happens if you call it with `(add(2, 'potato')`? 
+ 
+---
+transition: slide-left
+---
+
+# Testing for Invalid Input (pg.2)
+
+  - What happens if you call it with `(add(2, 'potato')`?
+  - How would you write the test? 
+  - Would you expect it to throw an error or not? (up to you) 
+  - How would you write the function if it threw an error?
   ```js
   // math.js
+  export const add = (a, b) => {
+    if (typeof a === 'string') a = Number(a);
+    if (typeof b === 'string') b = Number(b);
 
+    if (isNaN(a)) throw new Error("the first argument is not a number")
+    if (isNaN(b)) throw new Error("the second argument is not a number")
+
+    return a + b;
+  }
 
   // /tests/math.test.js
   it('should cast string numerals into numbers', () => {
-    expect(() => (add(2, 'potato').toThrow()))
+    expect(() => (add(2, 'potato').toThrow())) // note we had to wrap with expect()
   })
   ```
 
