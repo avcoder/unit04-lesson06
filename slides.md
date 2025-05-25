@@ -107,10 +107,10 @@ transition: slide-left
   ```
 - `npm run test` or `npm run test:watch`
 - try breaking a test to see what happens (ex: `expect(2 + 2).toBe(5)`)
-- https://jestjs.io/docs/expect
-- What do you think `describe()` does?
-- What does `it()` do?
-- What does `expect()` do?
+- What does [describe](https://jestjs.io/docs/api#describename-fn) do?
+- What does [it](https://jestjs.io/docs/api#testname-fn-timeout) do?
+- What does [expect](https://jestjs.io/docs/expect) do?
+- What does [toBe](https://jestjs.io/docs/expect#tobevalue) do?
 
 ---
 transition: slide-left
