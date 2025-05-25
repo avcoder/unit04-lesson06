@@ -46,6 +46,7 @@ transition: slide-left
 - What would happen if your app broke and users noticed before you did?
 
 What is software testing and why is it important?
+- [QA Job Postings](https://ca.indeed.com/jobs?q=qa+engineer&l=Remote&from=searchOnDesktopSerp&vjk=81b75ba803f6d8e7)
 
 ---
 transition: slide-left
@@ -286,7 +287,7 @@ transition: slide-left
   ```
   - let's put this timeout in an async function, then write a unit test
 
-  ---
+---
 transition: slide-left
 ---
 
