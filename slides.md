@@ -62,6 +62,7 @@ transition: slide-left
 - Ask ChatGPT:
    - What is the most popular testing library for node apps?
    - List developer testing tools in chronological order (ex: jest, mocha chai) 
+- What do you think would change if you had a way to automatically test parts of your app every time you updated it?
 
 ---
 transition: slide-left
@@ -69,13 +70,6 @@ transition: slide-left
 
 # Debugging and Testing Routes
 
-- Identify tools you might use to normally test a route like this:
-  ```js
-  app.get('/api/trucks', (req, res) => {
-    res.json({ message: 'List of food trucks' });
-  });
-  ```
-- What do you think would change if you had a way to automatically test parts of your app every time you updated it?
 - `npm init -y`
 - `npm i -D jest @babel/core @babel/preset-env babel-jest`
 - Change package.json:
@@ -86,6 +80,12 @@ transition: slide-left
     },
    ```
    - run `git init` otherwise "watch" won't work
+- Create `.babelrc`
+  ```json
+  {
+    "presets": ["@babel/preset-env"]
+  }
+  ```
 
 ---
 transition: slide-left
@@ -175,9 +175,29 @@ Practice Test Driven Development
    - `subtract()`
    - `multiple()`
    - `divide()`
-1. What happens if your functions are called with arguments that invalid?  
-   - ex: add('1', '2')
-1. Try to break your tests thinking of other invalid input - then fix your tests to cover for those cases
+
+---
+transition: slide-left
+---
+
+# Testing for Invalid Input
+
+- What happens if your functions are called with arguments that invalid? ex: add('1', '2')
+
+  ```js
+  // math.js
+  export const add = (a, b) => {
+    if (typeof a === 'string') a = Number(a);
+    if (typeof b === 'string') b = Number(b);
+    return a + b;
+  }
+
+  // /tests/math.test.js
+  it('should cast string numerals into numbers', () => {
+    expect(() => (add('1', '2').toBe(3)))
+  })
+  ```
+  - What happens if you call it with `(add('2', 'potato').toBe(2)`?
 
 ---
 layout: image-right
