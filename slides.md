@@ -208,8 +208,7 @@ transition: slide-left
 
   - What happens if you call it with `(add(2, 'potato')`?
   - How would you write the test? 
-  - Would you expect it to throw an error or not? (up to you) 
-  - How would you write the function if it threw an error?
+  - Would you expect it to throw an error or not? (depends on what you want to accomplish. No right answer here) 
   ```js
   // math.js
   export const add = (a, b) => {
