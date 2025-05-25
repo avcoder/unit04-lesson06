@@ -180,8 +180,8 @@ Practice Test Driven Development
 ---
 layout: image-right
 transition: slide-left
-image: /assets/dodds.png
-backgroundSize: 400px 320px
+image: /assets/kent.png
+backgroundSize: 400px 250px
 class: text-left
 ---
 
@@ -189,10 +189,11 @@ class: text-left
 
 🍦 Cool Tips, Trends and Resources:
 
-- 🧼 [Load Balancing](https://samwho.dev/load-balancing/)
-- 🎒 [Tech Documentaries](https://www.techdocumentaries.com/#2)
-- 😵‍💫 [Interactive SVG Reference](https://www.fffuel.co/sssvg/)
-- 📝 [Toools Design Resources](https://www.toools.design/?ref=dailydev)
+- 🏗️ [Load Balancing](https://samwho.dev/load-balancing/)
+- 💾 [Tech Documentaries](https://www.techdocumentaries.com/#2)
+- 🎨 [Interactive SVG Reference](https://www.fffuel.co/sssvg/)
+- 🧑‍🎨 [Toools Design Resources](https://www.toools.design/?ref=dailydev)
+- ✋ [Stop Lying to Your Users](https://www.epicweb.dev/stop-lying-to-your-users)
 
 <br>
 <hr>
