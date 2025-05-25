@@ -75,7 +75,7 @@ transition: slide-left
 - Change package.json:
    ```json
     "scripts": {
-      "test": "jest",
+      "test": "jest --silent=false",
       "test:watch": "jest --watch"
     },
    ```
