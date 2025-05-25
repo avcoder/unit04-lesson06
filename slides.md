@@ -148,7 +148,7 @@ transition: slide-left
     ```js
     // math.js
     export function add(a, b) {
-      return a + b;
+      return ???;
     }
     ```
     ```js
@@ -161,6 +161,7 @@ transition: slide-left
       });
     });
     ```
+- Tip: _Your tests pass because they didn't fail. Not because your code works_ (ex: `return 4`)
 1. Refactor function if needed so it's cleaner yet stays `GREEN` 
 
 ---
@@ -198,8 +199,11 @@ transition: slide-left
   })
   ```
   - What happens if you call it with `(add(2, 'potato')`? 
-  - How would you write the test?  How would you write the function?
+  - How would you write the test? Would you expect it to throw an error or not? (up to you) How would you write the function if it threw an error?
   ```js
+  // math.js
+
+
   // /tests/math.test.js
   it('should cast string numerals into numbers', () => {
     expect(() => (add(2, 'potato').toThrow()))
@@ -239,32 +243,17 @@ class: text-left
 transition: slide-left
 ---
 
-# Show a google map based off lat/lng coordinates
+# Show 
 
-- We need to adjust our schema to include location etc.
-- let's move our choices to truckController as a const
-- adjust our addTruck form and editTruck form to include location
-- add autocomplete functionality for address
-- add slug page
-- make static google map based off our lat/lng
-- ensure slug is unique
+- asdf
 
 ---
 transition: slide-left
----
-
-# Create tags page
-
-- create `getTags` route
-- add `.getAllTags()` method to Truck schema
-- make clicking each tag filter and display corresponding food trucks with tag
-
----
-transition: slide-left
+layout: two-cols
 ---
 
 # Lab tomorrow
-Do at least 1 "Getting Started" from:
+Do at least 1 "Getting Started" from here:
 
   - [Socket io](https://socket.io/get-started/chat)
   - [AI LLM chat model](https://js.langchain.com/docs/tutorials/llm_chain)
@@ -272,9 +261,15 @@ Do at least 1 "Getting Started" from:
   - [Nest JS](https://docs.nestjs.com/first-steps)
   - [Next JS](https://nextjs.org/docs/app/getting-started/installation)
   - [Netlify Serverless Functions](https://docs.netlify.com/functions/get-started/?fn-language=js)
+
+::right::
+
+# 
   - [Go](https://go.dev/doc/tutorial/getting-started)
   - [PostGreSQL](https://neon.tech/postgresql/postgresql-getting-started)
   - [PHP](https://www.php.net/manual/en/tutorial.php)
   - [GraphQL](https://graphql.org/graphql-js/)
   - [Electron](https://www.electronjs.org/docs/latest/tutorial/tutorial-first-app)
   - [Astro](https://docs.astro.build/en/tutorial/0-introduction/)
+  - [Twilio](https://www.twilio.com/docs/messaging/quickstart)
+  - [Tauri](https://tauri.app/start/)
