@@ -110,7 +110,8 @@ transition: slide-left
 - What does [describe](https://jestjs.io/docs/api#describename-fn) do?
 - What does [it](https://jestjs.io/docs/api#testname-fn-timeout) do?
 - What does [expect](https://jestjs.io/docs/expect) do?
-- What does [toBe](https://jestjs.io/docs/expect#tobevalue) do?
+- What does [toBe](https://jestjs.io/docs/expect#tobevalue) do? 
+   - compare objects using toBe vs toEqual
 
 ---
 transition: slide-left
