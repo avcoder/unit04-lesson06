@@ -162,7 +162,6 @@ transition: slide-left
     });
     ```
 1. Refactor function if needed so it's cleaner yet stays `GREEN` 
-- Install VS Code extension "Jest"
 
 ---
 transition: slide-left
@@ -171,6 +170,7 @@ transition: slide-left
 # Exercise: Writing Unit Tests
 Practice Test Driven Development
 
+- Tip: Install VS Code extension "Jest"
 1. Make functions and unit tests for:
    - `subtract()`
    - `multiple()`
