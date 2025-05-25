@@ -175,7 +175,7 @@ Practice Test Driven Development
    - `subtract()`
    - `multiple()`
    - `divide()`
-1. What happens if your functions are called with arguments that aren't numbers?
+1. What happens if your functions are called with arguments that invalid?  
 
 ---
 layout: image-right
