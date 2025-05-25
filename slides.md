@@ -176,6 +176,8 @@ Practice Test Driven Development
    - `multiple()`
    - `divide()`
 1. What happens if your functions are called with arguments that invalid?  
+   - ex: add('1', '2')
+1. Try to break your tests thinking of other invalid examples - then fix your tests to cover for those edge cases
 
 ---
 layout: image-right
