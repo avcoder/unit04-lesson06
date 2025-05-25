@@ -101,11 +101,11 @@ describe('first test', () => {
     });
 
     it('should be 4', () => {
-        expect(2 + 2).toBe(4)
+        expect(1 + 1).toBe(2)
     })
 })
 ```
-- try `npm run test` or `npm run test:watch`
+- `npm run test` or `npm run test:watch`
 - try breaking a test to see what happens (ex: `expect(2 + 2).toBe(5)`)
 - https://jestjs.io/docs/expect
 
