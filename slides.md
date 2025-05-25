@@ -228,6 +228,19 @@ transition: slide-left
   ```
 
 ---
+transition: slide-left
+---
+
+# Exercise: Writing Unit Tests for Edge Cases
+
+- Refactor your unit tests to take into account some of these edge cases
+- Here are some examples of invalid inputs that you may want to take into account in your unit tests:
+  - `boolean`, `string`, `number`
+  - `undefined`, `null`, `NaN`
+  - array, object, function
+  - Promise
+
+---
 layout: image-right
 transition: slide-left
 image: /assets/kent.png
