@@ -91,7 +91,7 @@ transition: slide-left
 transition: slide-left
 ---
 
-# Exercise: Writing Unit Tests (pg.1)
+# Writing Unit Tests (pg.1)
 
   ```js
   // first.test.js
@@ -115,7 +115,7 @@ transition: slide-left
 transition: slide-left
 ---
 
-# Exercise: Writing Unit Tests (pg.2)
+# Writing Unit Tests (pg.2)
 Test Driven Development (i.e. red, green, refactor) is one style of writing unit tests. 
 
 1. Write the unit test first = `red`
@@ -136,12 +136,13 @@ Test Driven Development (i.e. red, green, refactor) is one style of writing unit
 - Step 1) `RED`
 - Step 2) `GREEN` - implement function now to make it pass
 - Step 3) `REFACTOR` function (if needed) yet still pass
+- Now you have a way to add/change features in your codebase and getting instant feedback
 
 ---
 transition: slide-left
 ---
 
-# Exercise: Writing Unit Tests (pg.3)
+# Writing Unit Tests (pg.3)
 
 1. Write the function then incorporate it into test so it passes = `green`
   ```js
@@ -163,7 +164,18 @@ transition: slide-left
 1. Refactor function if needed so it's cleaner yet stays `green` 
 - Try commenting out the entire `expect().toBe()` line -- does the test still pass?
 - Install VS Code extension "Jest"
-- Exercise: Make functions and unit tests for subtract, multiple, divide
+
+---
+transition: slide-left
+---
+
+# Exercise: Writing Unit Tests
+Practice Test Driven Development
+
+- Make functions and unit tests for:
+   - `subtract()`
+   - `multiple()`
+   - `divide()`
 
 ---
 layout: image-right
@@ -177,10 +189,10 @@ class: text-left
 
 🍦 Cool Tips, Trends and Resources:
 
-- 🧼 [Background Removal Tool](https://huggingface.co/spaces/Xenova/remove-background-web)
-- 🎒 [Self-hosted Apps](https://selfhosted.libhunt.com/)
-- 😵‍💫 [Brutalist Report](https://brutalist.report/)
-- 📝 [Markdown Notes](https://github.com/orgs/community/discussions/16925)
+- 🧼 [Load Balancing](https://samwho.dev/load-balancing/)
+- 🎒 [Tech Documentaries](https://www.techdocumentaries.com/#2)
+- 😵‍💫 [Interactive SVG Reference](https://www.fffuel.co/sssvg/)
+- 📝 [Toools Design Resources](https://www.toools.design/?ref=dailydev)
 
 <br>
 <hr>
