@@ -194,10 +194,17 @@ transition: slide-left
 
   // /tests/math.test.js
   it('should cast string numerals into numbers', () => {
-    expect(() => (add('1', '2').toBe(3)))
+    expect(add('1', '2')).toBe(3)
   })
   ```
-  - What happens if you call it with `(add('2', 'potato').toBe(2)`?
+  - What happens if you call it with `(add(2, 'potato')`? 
+  - How would you write the test?  How would you write the function?
+  ```js
+  // /tests/math.test.js
+  it('should cast string numerals into numbers', () => {
+    expect(() => (add(2, 'potato').toThrow()))
+  })
+  ```
 
 ---
 layout: image-right
