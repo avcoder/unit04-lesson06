@@ -313,6 +313,22 @@ transition: slide-left
   })
   ```
 
+---
+transition: slide-left
+---
+
+# Spies 
+
+- Spies give existing functions introspection abilities.
+- 
+
+---
+transition: slide-left
+---
+
+# Mocks
+
+- Mocks are placeholders for existing functions
 
 ---
 transition: slide-left
