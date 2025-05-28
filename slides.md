@@ -19,7 +19,7 @@ mdc: true
 # Unit Testing
 Full-Stack Development - part 6/8
 
-- [ ] Intro to Unit Testing
+- [ ] Intro to Testing
 - [ ] Writing Unit Tests
 - [ ] Automated Test `npm-test`
 
@@ -37,6 +37,7 @@ transition: slide-left
 ---
 
 # Intro to Unit Testing
+What is testing and why it's important in software development
 
 - Can you think of something where we test the product before we buy the product?
 - Have you ever coded a new feature, only to have something that previously worked, break?
@@ -45,7 +46,7 @@ transition: slide-left
 - If your project grew 10x in size, how would you make sure everything still worked?
 - What would happen if your app broke and users noticed before you did?
 
-What is software testing and why is it important?
+What is the role of a developer when we think about testing?
 - [QA Job Postings](https://ca.indeed.com/jobs?q=qa+engineer&l=Remote&from=searchOnDesktopSerp&vjk=81b75ba803f6d8e7)
 
 ---
