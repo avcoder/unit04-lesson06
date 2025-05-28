@@ -53,6 +53,21 @@ What is the role of a developer when we think about testing?
 transition: slide-left
 ---
 
+# Definition
+
+- Software Testing: A process to evaluate and ensure that software works as intended
+- Why?
+   - Reduces bugs
+   - Improves code quality
+   - Supports maintainability
+- Your role as a developer: Deveopers are responsible for writing reliable code, which includees creating and running tests
+
+What are some consequences of not testing properly?
+
+---
+transition: slide-left
+---
+
 # Types of Testing
 
 - Unit Tests: Tests the smallest parts of code (ex: functions) in isolation
@@ -70,7 +85,21 @@ transition: slide-left
 transition: slide-left
 ---
 
-# Debugging and Testing Routes
+# Debugging Tools
+
+- Debugging Express Routes:
+   - use of `console.log()` for basic tracing
+   - use of VS Code breakpoints within Node.js
+   - understanding of request/response cycle and basic status codes
+- Testing Express Routes:
+   - Manually testing via Postman (simulates API calls)
+   - Use of browser dev tools to inspect network calls and responses
+
+---
+transition: slide-left
+---
+
+# Setup Jest 
 
 - `npm init -y`
 - `npm i -D jest @babel/core @babel/preset-env babel-jest`
