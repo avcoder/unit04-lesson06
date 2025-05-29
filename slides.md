@@ -506,23 +506,6 @@ transition: slide-left
 - Lesson #3: `jest.fn()` allows you to replace a real function with a mock
 
 ```js
-// logger.js
-export const log = (msg) => console.log(msg);
-
-// app.js
-import { log } from './logger.js';
-export const runApp = () => log('running');
-
-// tests/app.test.js
-import * as logger from '../logger.js';
-import { runApp } from '../app.js';
-
-jest.spyOn(logger, 'log').mockImplementation(() => {});
-
-it('calls log with "running"', () => {
-  runApp();
-  expect(logger.log).toHaveBeenCalledWith('running');
-});
 ```
 
 ---
