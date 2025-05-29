@@ -432,6 +432,10 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 describe('createUser()', () => {
   beforeEach(() => {
     jest.spyOn(logger, 'log').mockImplementation(() => {});
+    // ✅ You are spying on the real logger.log function.
+    // ✅ You are replacing it with a no-op using .mockImplementation(() => {}).
+    // ✅ This avoids running the real implementation (e.g., logging to the console).
+    // ✅ But you're still importing the real module (not auto-mocking it).
   });
 
   it('calls logger with the correct message', () => {
