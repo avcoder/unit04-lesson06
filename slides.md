@@ -503,8 +503,8 @@ transition: slide-left
 - can also clear/reset mocks
   ```js
   // inside beforeEach()
-  vi.clearAllMocks();  // clears call history
-  vi.resetAllMocks();  // resets implementation too
+  jest.clearAllMocks();  // clears call history
+  jest.resetAllMocks();  // resets implementation too
   ```
 
 ---
@@ -583,9 +583,9 @@ transition: slide-left
 ```js
 import { describe, it, expect, vi } from 'vitest';
 
-describe('vi.fn() with custom logic', () => {
+describe('jest.fn() with custom logic', () => {
   it('should act like a real function', () => {
-    const mockGreet = vi.fn((name) => `Hello, ${name}!`);
+    const mockGreet = jest.fn((name) => `Hello, ${name}!`);
 
     expect(mockGreet('Alice')).toBe('Hello, Alice!');
     expect(mockGreet).toHaveBeenCalledWith('Alice');
@@ -603,10 +603,10 @@ ex: Mocking an Express-like Controller
 ```js
 const mockReq = {};
 const mockRes = {
-  send: vi.fn()
+  send: jest.fn()
 };
 
-const mockController = vi.fn((req, res) => {
+const mockController = jest.fn((req, res) => {
   res.send('Mock response!');
 });
 
@@ -628,12 +628,12 @@ import express from 'express';
 import router from 'router.js';
 
 // Mock controller
-vi.mock('truckController.js', () => ({
-  getTrucksBySlug: vi.fn((req, res) => res.send('mock response'))
+jest.mock('truckController.js', () => ({
+  getTrucksBySlug: jest.fn((req, res) => res.send('mock response'))
 }));
 
 // Mock middleware
-vi.mock('authController.js', () => ({
+jest.mock('authController.js', () => ({
   isAuthenticated: (req, res, next) => next()
 }));
 
@@ -644,6 +644,62 @@ describe('GET /trucks', () => {
   it('responds with mock controller data', async () => {
     const response = await request(app).get('/trucks');
     expect(response.text).toBe('mock response');
+  });
+});
+```
+
+---
+transition: slide-left
+---
+
+# Mocks (pg.7)
+
+```js
+import { describe, it, expect, vi } from 'vitest';
+import { getTrucksByAuthor } from '../controllers/truckController.js';
+import * as truckHandler from '../handlers/truckHandler.js';
+
+jest.mock('../handlers/truckHandler.js');
+
+describe('truckController.getTrucksByAuthor()', () => {
+  it('renders trucks view with trucks from handler', async () => {
+    const mockTrucks = [{ name: 'Mock Truck' }];
+    truckHandler.getTrucksBySlug.mockResolvedValue(mockTrucks);
+
+    const req = { user: { _id: 'user123' } };
+    const res = { render: jest.fn() };
+
+    await getTrucksByAuthor(req, res);
+
+    expect(truckHandler.getTrucksByAuthor).toHaveBeenCalledWith('user123');
+    expect(res.render).toHaveBeenCalledWith('trucks', { title: 'All Trucks', trucks: mockTrucks });
+  });
+});
+```
+
+---
+transition: slide-left
+---
+
+# Mocks (pg.8)
+
+```js
+import { describe, it, expect, jest } from '@jest/globals'; 
+import * as truckHandler from '../handlers/truckHandler.js';
+
+// Mocking Truck model
+jest.mock('../models/Truck.js', () => ({
+  Truck: {
+    find: jest.fn(() => ({
+      lean: jest.fn(() => [{ name: 'Truck 1' }, { name: 'Truck 2' }])
+    }))
+  }
+}));
+
+describe('getTrucksByAuthor()', () => {
+  it('returns trucks for a given author', async () => {
+    const trucks = await truckHandler.getTrucksByAuthor('authorId123');
+    expect(trucks).toEqual([{ name: 'Truck 1' }, { name: 'Truck 2' }]);
   });
 });
 ```
