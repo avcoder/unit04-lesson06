@@ -450,14 +450,31 @@ transition: slide-left
 Mocks are placeholders for existing functions
 
 - Intro to `jest.fn()` - what it does, why real functions are replaced in tests
+- Lesson #1: `jest.fn()` returns a function
+```js
+// tests/vi-fn-basic.test.js
+import { describe, it, expect, vi } from 'vitest';
 
+describe('vi.fn()', () => {
+  it('tracks how many times a function was called', () => {
+    const mockFn = vi.fn();
+
+    mockFn();
+    mockFn('hello');
+
+    expect(mockFn).toHaveBeenCalledTimes(2);
+    expect(mockFn).toHaveBeenCalledWith('hello');
+  });
+});
+
+```
 
 
 ---
 transition: slide-left
 ---
 
-# Mocks (pg.1)
+# Mocks (pg.2)
 
 - `jest.fn()` allows you to chain `.mockReturnValue()`, `.mockResolvedValue()`
 
