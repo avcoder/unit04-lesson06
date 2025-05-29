@@ -621,6 +621,7 @@ transition: slide-left
 ---
 
 # Mocks (pg.6)
+test route
 
 ```js
 import request from 'supertest';
@@ -653,6 +654,7 @@ transition: slide-left
 ---
 
 # Mocks (pg.7)
+test controller
 
 ```js
 import { describe, it, expect, vi } from 'vitest';
@@ -682,6 +684,7 @@ transition: slide-left
 ---
 
 # Mocks (pg.8)
+test handler
 
 ```js
 import { describe, it, expect, jest } from '@jest/globals'; 
