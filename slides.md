@@ -477,25 +477,29 @@ transition: slide-left
 # Mocks (pg.2)
 
 - Lesson #2: `jest.fn()` also allows you to return a value via `.mockReturnValue()`
-```js
-it('should return a value', () => {
-  const mockFn = jest.fn().mockReturnValue(42);
+  ```js
+  it('should return a value', () => {
+    const mockFn = jest.fn().mockReturnValue(42);
 
-  const result = mockFn();
-  expect(result).toBe(42);
-});
-```
-
+    const result = mockFn();
+    expect(result).toBe(42);
+  });
+  ```
 - or via `.mockResolvedValue()`
-```js
-it('should return an async value', async () => {
-  const asyncMock = jest.fn().mockResolvedValue('mock data');
+  ```js
+  it('should return an async value', async () => {
+    const asyncMock = jest.fn().mockResolvedValue('mock data');
 
-  const result = await asyncMock();
-  expect(result).toBe('mock data');
-});
-
-```
+    const result = await asyncMock();
+    expect(result).toBe('mock data');
+  });
+  ```
+- can also clear/reset mocks
+  ```js
+  // inside beforeEach()
+  vi.clearAllMocks();  // clears call history
+  vi.resetAllMocks();  // resets implementation too
+  ```
 
 ---
 transition: slide-left
