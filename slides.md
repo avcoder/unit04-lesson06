@@ -450,7 +450,7 @@ transition: slide-left
 Mocks are placeholders for existing functions
 
 - Intro to `jest.fn()` - what it does, why real functions are replaced in tests
-- Lesson #1: `jest.fn()` returns a function
+- Lesson #1: `jest.fn()` can return a single function (fine-grained control)
 ```js
 // tests/vi-fn-basic.test.js
 import { describe, it, expect, jest } from 'vitest';
@@ -506,10 +506,32 @@ transition: slide-left
 ---
 
 # Mocks (pg.3)
-
-- Lesson #3: `jest.fn()` allows you to replace a real function with a mock
+`jest.mock()` allows for module mocking and replaces all exports with mock functions
 
 ```js
+// This code is almost an exactly duplicate of the spyOn slide earlier. So how is jest.mock() different?
+// services/logger.js
+export const log = (msg) => console.log(msg);
+
+// services/userService.js
+import { log } from './logger.js';
+
+export const createUser = (name) => {
+  log(`User created: ${name}`);
+  return { name };
+};
+
+// userService.test.js 
+import { createUser } from '../services/userService.js';
+import * as logger from '../utils/logger.js';
+
+// jest.mock('../utils/logger.js') automatically replaces log() with a mock function (jest.fn() under the hood).
+jest.mock('../utils/logger.js');
+
+test('logs when a user is created', () => {
+  createUser('Alice');
+  expect(logger.log).toHaveBeenCalledWith('User created: Alice');
+}); 
 ```
 
 ---
