@@ -431,7 +431,7 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 
 describe('createUser()', () => {
   beforeEach(() => {
-    vi.spyOn(logger, 'log').mockImplementation(() => {});
+    jest.spyOn(logger, 'log').mockImplementation(() => {});
   });
 
   it('calls logger with the correct message', () => {
@@ -453,11 +453,11 @@ Mocks are placeholders for existing functions
 - Lesson #1: `jest.fn()` returns a function
 ```js
 // tests/vi-fn-basic.test.js
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, jest } from 'vitest';
 
-describe('vi.fn()', () => {
-  it('tracks how many times a function was called', () => {
-    const mockFn = vi.fn();
+describe('how jest.fn() works', () => {
+  it('should track how many times a function was called', () => {
+    const mockFn = jest.fn();
 
     mockFn();
     mockFn('hello');
@@ -476,7 +476,54 @@ transition: slide-left
 
 # Mocks (pg.2)
 
-- `jest.fn()` allows you to chain `.mockReturnValue()`, `.mockResolvedValue()`
+- Lesson #2: `jest.fn()` also allows you to return a value via `.mockReturnValue()`
+```js
+it('should return a value', () => {
+  const mockFn = jest.fn().mockReturnValue(42);
+
+  const result = mockFn();
+  expect(result).toBe(42);
+});
+```
+
+- or via `.mockResolvedValue()`
+```js
+it('should return an async value', async () => {
+  const asyncMock = jest.fn().mockResolvedValue('mock data');
+
+  const result = await asyncMock();
+  expect(result).toBe('mock data');
+});
+
+```
+
+---
+transition: slide-left
+---
+
+# Mocks (pg.3)
+
+- Lesson #3: `jest.fn()` allows you to replace a real function with a mock
+
+```js
+// logger.js
+export const log = (msg) => console.log(msg);
+
+// app.js
+import { log } from './logger.js';
+export const runApp = () => log('running');
+
+// tests/app.test.js
+import * as logger from '../logger.js';
+import { runApp } from '../app.js';
+
+jest.spyOn(logger, 'log').mockImplementation(() => {});
+
+it('calls log with "running"', () => {
+  runApp();
+  expect(logger.log).toHaveBeenCalledWith('running');
+});
+```
 
 ---
 transition: slide-left
