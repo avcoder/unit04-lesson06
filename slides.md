@@ -461,11 +461,13 @@ import { describe, it, expect, jest } from 'vitest';
 
 describe('how jest.fn() works', () => {
   it('should track how many times a function was called', () => {
-    const mockFn = jest.fn();
+    // try logging out mockFn below. and mockFn.mock
+    const mockFn = jest.fn(); 
 
     mockFn();
     mockFn('hello');
 
+    // NOTE: The reason I can call `.toHaveBeenCalled...()` is because of `jest.fn()`
     expect(mockFn).toHaveBeenCalledTimes(2);
     expect(mockFn).toHaveBeenCalledWith('hello');
   });
@@ -553,6 +555,29 @@ What’s the Difference Between jest.mock() and jest.spyOn()?
 | **Restoration**  | Needs manual `jest.resetModules()` or `jest.clearAllMocks()` | Easily restored with `mockRestore()`                                   |
 | **Use case**     | External libraries, utility modules, database models         | Internal app code, one-off method replacements                         |
 
+
+---
+transition: slide-left
+---
+
+# When to use spyOn vs mock
+Summary
+
+Use jest.spyOn() when:
+  - You want to observe a real function without replacing it.
+  - You need to partially mock — e.g., let other methods in the module behave normally.
+  - You're testing an internal method or object, and want precise control.
+
+Use jest.mock() when:
+  - You want to mock an entire module (like a service, DB model, or utility).
+  - You're testing something that depends on an external file.
+  - You want auto-mocking and are OK overriding individual methods later.
+
+---
+transition: slide-left
+--- 
+
+# Mocks (pg.4)
 
 ---
 transition: slide-left
