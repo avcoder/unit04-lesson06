@@ -130,7 +130,7 @@ transition: slide-left
    ```json
     "type": "module",
     "scripts": {
-      "test": "jest --silent=false", // silent false allows me to view console.log() output
+      "test": "jest --silent=false", // silent=false allows me to view console.log() output
       "test:watch": "jest --watch"
     },
    ```
