@@ -451,10 +451,10 @@ transition: slide-left
 ---
 
 # Mocks (pg.1)
-Mocks are placeholders for existing functions
+`jest.fn()` can return a single function (fine-grained control) and thus act as a function placeholder
 
 - Intro to `jest.fn()` - what it does, why real functions are replaced in tests
-- Lesson #1: `jest.fn()` can return a single function (fine-grained control)
+
 ```js
 // tests/vi-fn-basic.test.js
 import { describe, it, expect, jest } from 'vitest';
@@ -481,8 +481,8 @@ transition: slide-left
 ---
 
 # Mocks (pg.2)
+`jest.fn()` also allows you to return a value via `.mockReturnValue()`
 
-- Lesson #2: `jest.fn()` also allows you to return a value via `.mockReturnValue()`
   ```js
   it('should return a value', () => {
     const mockFn = jest.fn().mockReturnValue(42);
@@ -578,6 +578,43 @@ transition: slide-left
 --- 
 
 # Mocks (pg.4)
+`jest.fn()` can also mock actual logic by accepting a custom implementation.
+
+```js
+import { describe, it, expect, vi } from 'vitest';
+
+describe('vi.fn() with custom logic', () => {
+  it('should act like a real function', () => {
+    const mockGreet = vi.fn((name) => `Hello, ${name}!`);
+
+    expect(mockGreet('Alice')).toBe('Hello, Alice!');
+    expect(mockGreet).toHaveBeenCalledWith('Alice');
+  });
+});
+```
+
+---
+transition: slide-left
+--- 
+
+# Mocks (pg.5)
+ex: Mocking an Express-like Controller
+
+```js
+const mockReq = {};
+const mockRes = {
+  send: vi.fn()
+};
+
+const mockController = vi.fn((req, res) => {
+  res.send('Mock response!');
+});
+
+mockController(mockReq, mockRes);
+
+// Test
+expect(mockRes.send).toHaveBeenCalledWith('Mock response!');
+```
 
 ---
 transition: slide-left
