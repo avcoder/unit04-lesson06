@@ -620,6 +620,38 @@ expect(mockRes.send).toHaveBeenCalledWith('Mock response!');
 transition: slide-left
 ---
 
+# Mocks (pg.6)
+
+```js
+import request from 'supertest';
+import express from 'express';
+import router from 'router.js';
+
+// Mock controller
+vi.mock('truckController.js', () => ({
+  getTrucksBySlug: vi.fn((req, res) => res.send('mock response'))
+}));
+
+// Mock middleware
+vi.mock('authController.js', () => ({
+  isAuthenticated: (req, res, next) => next()
+}));
+
+describe('GET /trucks', () => {
+  const app = express();
+  app.use(router);
+
+  it('responds with mock controller data', async () => {
+    const response = await request(app).get('/trucks');
+    expect(response.text).toBe('mock response');
+  });
+});
+```
+
+---
+transition: slide-left
+---
+
 # Homework
 
 - Practice full-stack by building a [movie ratings and review application](https://courses.circuitstream.com/d2l/le/lessons/9514/topics/49843)
