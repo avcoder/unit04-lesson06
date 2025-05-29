@@ -122,7 +122,7 @@ https://jestjs.io/ - Jest is an all-in-one test runner and assertion library
 transition: slide-left
 ---
 
-# Setup Jest & supertest
+# Setup Jest & [supertest](https://github.com/ladjs/supertest#readme)
 
 - `npm init -y`
 - `npm i -D jest @babel/core @babel/preset-env babel-jest supertest`
