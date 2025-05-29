@@ -413,11 +413,16 @@ export const createUser = (name) => {
 };
 ```
 
+- Notice userService.js imports/uses another function elsewhere. 
+- What if we want to test if `log()` gets called with the correct arguments?
+- something like: `expect(log).toHaveBeenCalledWith('User created: Al');`
+
 ---
 transition: slide-left
 ---
 
 # Spies (pg.2)
+We can spy on `log()` to see if it's been called with the correct arguments
 
 ```js
 import * as logger from '../services/logger.js';
@@ -430,9 +435,9 @@ describe('createUser()', () => {
   });
 
   it('calls logger with the correct message', () => {
-    const user = createUser('Alice');
-    expect(logger.log).toHaveBeenCalledWith('User created: Alice');
-    expect(user).toEqual({ name: 'Alice' });
+    const user = createUser('Al');
+    expect(logger.log).toHaveBeenCalledWith('User created: Al');
+    expect(user).toEqual({ name: 'Al' });
   });
 });
 ```
