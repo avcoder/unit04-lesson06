@@ -709,5 +709,5 @@ transition: slide-left
 ---
 
 # Homework
-
+- Practice building unit tests
 - Practice full-stack by building a [movie ratings and review application](https://courses.circuitstream.com/d2l/le/lessons/9514/topics/49843)
