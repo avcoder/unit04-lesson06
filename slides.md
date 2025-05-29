@@ -538,6 +538,22 @@ test('logs when a user is created', () => {
 transition: slide-left
 ---
 
+# Spies vs Mocks
+What’s the Difference Between jest.mock() and jest.spyOn()?
+
+| Feature          | `jest.mock()`                                                | `jest.spyOn()`                                                         |
+| ---------------- | ------------------------------------------------------------ | ---------------------------------------------------------------------- |
+| **Purpose**      | Automatically mocks all functions in a module                | Observes and optionally mocks a single method on an object             |
+| **Scope**        | Mocks **the entire module**                                  | Mocks **a specific method**                                            |
+| **Auto-mocking** | Yes, unless you override it                                  | No — you must provide a mock manually (or call `mockImplementation()`) |
+| **Restoration**  | Needs manual `jest.resetModules()` or `jest.clearAllMocks()` | Easily restored with `mockRestore()`                                   |
+| **Use case**     | External libraries, utility modules, database models         | Internal app code, one-off method replacements                         |
+
+
+---
+transition: slide-left
+---
+
 # Homework
 
 - Practice full-stack by building a [movie ratings and review application](https://courses.circuitstream.com/d2l/le/lessons/9514/topics/49843)
