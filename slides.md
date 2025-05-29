@@ -395,19 +395,60 @@ describe("fetchData", () => {
 transition: slide-left
 ---
 
-# Mocks
+# Spies (pg.1)
 
-- Mocks are placeholders for existing functions
+- Spies give existing functions introspection abilities. It lets you watch or override a function
+- Great for mocking small functions without mocking the whole module
 
+```js
+// services/logger.js
+export const log = (msg) => console.log(msg);
+
+// services/userService.js
+import { log } from './logger.js';
+
+export const createUser = (name) => {
+  log(`User created: ${name}`);
+  return { name };
+};
+```
 
 ---
 transition: slide-left
 ---
 
-# Spies 
+# Spies (pg.2)
 
-- Spies give existing functions introspection abilities.
-- 
+```js
+import * as logger from '../services/logger.js';
+import { createUser } from '../services/userService.js';
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+
+describe('createUser()', () => {
+  beforeEach(() => {
+    vi.spyOn(logger, 'log').mockImplementation(() => {});
+  });
+
+  it('calls logger with the correct message', () => {
+    const user = createUser('Alice');
+    expect(logger.log).toHaveBeenCalledWith('User created: Alice');
+    expect(user).toEqual({ name: 'Alice' });
+  });
+});
+```
+
+---
+transition: slide-left
+---
+
+# Mocks
+Mocks are placeholders for existing functions
+
+- Let's learn how to replace a dependency manually without using `jest.mock()` for now
+
+
+
+
 
 ---
 transition: slide-left
