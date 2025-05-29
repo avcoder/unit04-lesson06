@@ -99,14 +99,38 @@ transition: slide-left
 transition: slide-left
 ---
 
-# Setup Jest 
+# Jest 
+https://jestjs.io/ - Jest is an all-in-one test runner and assertion library
+
+- Test Runner: a tool that finds your test files, executes the test code, reports results.  Usually includes functions like `describe`, `test` or `it`, `beforeEach` etc.
+  ```js
+  describe('feature name', () => {
+    it('should add numbers correctly', () => {
+      // put assertion code here
+    });
+  })
+  ```
+- Other competing software: Mocha, Jasmine, [Vitest](https://2024.stateofjs.com/en-US/awards/), 
+- Assertion Library: a tool used to check whether your code behaves as expected.  Usually includes functions like `expect`, `assert`, `toBe`
+  ```js
+  it('should add numbers correctly', () => {
+    expect(1 + 1).toBe(2);
+  });
+  ```
+
+---
+transition: slide-left
+---
+
+# Setup Jest & supertest
 
 - `npm init -y`
-- `npm i -D jest @babel/core @babel/preset-env babel-jest`
+- `npm i -D jest @babel/core @babel/preset-env babel-jest supertest`
 - Change package.json:
    ```json
+    "type": "module",
     "scripts": {
-      "test": "jest --silent=false",
+      "test": "jest --silent=false", // silent false allows me to view console.log() output
       "test:watch": "jest --watch"
     },
    ```
