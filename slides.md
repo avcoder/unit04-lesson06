@@ -386,7 +386,6 @@ transition: slide-left
 
 ---
 transition: slide-left
-layout: two-cols
 ---
 
 # Homework
