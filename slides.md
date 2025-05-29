@@ -371,6 +371,30 @@ transition: slide-left
 transition: slide-left
 ---
 
+# Unit Testing Async Functions (pg.3)
+another simpler example
+
+```js
+import { describe, it, expect } from "@jest/globals";
+
+// pretend we imported this function from a different file
+export const fetchData = async () => {
+  return "data received";
+};
+
+describe("fetchData", () => {
+  it('resolves with "data received"', async () => {
+    const data = await fetchData();
+    expect(data).toBe("data received");
+  });
+});
+
+```
+
+---
+transition: slide-left
+---
+
 # Mocks
 
 - Mocks are placeholders for existing functions
