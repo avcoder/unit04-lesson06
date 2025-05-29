@@ -446,14 +446,20 @@ describe('createUser()', () => {
 transition: slide-left
 ---
 
-# Mocks
+# Mocks (pg.1)
 Mocks are placeholders for existing functions
 
-- Let's learn how to replace a dependency manually without using `jest.mock()` for now
+- Intro to `jest.fn()` - what it does, why real functions are replaced in tests
 
 
 
+---
+transition: slide-left
+---
 
+# Mocks (pg.1)
+
+- `jest.fn()` allows you to chain `.mockReturnValue()`, `.mockResolvedValue()`
 
 ---
 transition: slide-left
