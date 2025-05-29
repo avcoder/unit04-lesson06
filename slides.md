@@ -389,24 +389,6 @@ transition: slide-left
 layout: two-cols
 ---
 
-# Lab tomorrow
-Do at least 1 "Getting Started" from here:
+# Homework
 
-  - [Socket io](https://socket.io/get-started/chat)
-  - [AI LLM chat model](https://js.langchain.com/docs/tutorials/llm_chain)
-  - [Snipcart](https://docs.snipcart.com/v3/)
-  - [Nest JS](https://docs.nestjs.com/first-steps)
-  - [Next JS](https://nextjs.org/docs/app/getting-started/installation)
-  - [Netlify Serverless Functions](https://docs.netlify.com/functions/get-started/?fn-language=js)
-
-::right::
-
-# 
-  - [Go](https://go.dev/doc/tutorial/getting-started)
-  - [PostGreSQL](https://neon.tech/postgresql/postgresql-getting-started)
-  - [PHP](https://www.php.net/manual/en/tutorial.php)
-  - [GraphQL](https://graphql.org/graphql-js/)
-  - [Electron](https://www.electronjs.org/docs/latest/tutorial/tutorial-first-app)
-  - [Astro](https://docs.astro.build/en/tutorial/0-introduction/)
-  - [Twilio](https://www.twilio.com/docs/messaging/quickstart)
-  - [Tauri](https://tauri.app/start/)
+- Practice full-stack by building a [movie ratings and review application](https://courses.circuitstream.com/d2l/le/lessons/9514/topics/49843)
